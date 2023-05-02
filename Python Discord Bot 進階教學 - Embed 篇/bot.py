@@ -40,7 +40,7 @@ async def load_extensions():
 async def main():
     async with bot:
         await load_extensions()
-        await bot.start("MTA2NzA4MjEyNjYzOTUwNTQwOQ.GDUCFR.J2xHZq9krNXuusZGqEnctNuvxfXMIqFcFrPNoY")
+        await bot.start("機器人 TOKEN")
 
 # 確定執行此py檔才會執行
 if __name__ == "__main__":
