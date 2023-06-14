@@ -84,7 +84,7 @@ class TaskTime(Cog_Extension):
         await channel.send(embed = embed)
 
 class TaskTimes(Cog_Extension):
-    # 設定每小時執行一次函式
+    # 設定整點執行一次函式
     every_hour_time = [
         datetime.time(hour = i, minute = 0, tzinfo = datetime.timezone(datetime.timedelta(hours = 8)))
         for i in range(24)
