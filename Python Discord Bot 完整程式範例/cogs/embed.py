@@ -1,10 +1,11 @@
-import discord
-import datetime
+import discord, datetime
 from discord.ext import commands
 from discord import app_commands
-from core.classes import Cog_Extension
 
-class Embed(Cog_Extension):
+class Embed(commands.Cog):
+    def __init__(self, bot: commands.Bot):
+        self.bot = bot
+
     @app_commands.command(name = "embed_base", description = "初始 Embed")
     async def embed_base(self, interaction: discord.Interaction):
         embed = discord.Embed(

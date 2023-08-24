@@ -1,7 +1,6 @@
 import discord
 from discord.ext import commands
 from discord import app_commands
-from core.classes import Cog_Extension
 
 # 宣告一個 ViewClass 類別，繼承 discord.ui.View
 class ViewClass(discord.ui.View):
@@ -10,7 +9,10 @@ class ViewClass(discord.ui.View):
         # 添加一個 Button 到 ViewClass 中
         self.add_item(discord.ui.Button(label = "Button"))
 
-class View(Cog_Extension):
+class View(commands.Cog):
+    def __init__(self, bot: commands.Bot):
+        self.bot = bot
+
     @app_commands.command(name = "view_base", description = "簡單 View 範例")
     async def view_base(self, interaction: discord.Interaction):
         # 創建一個 View，並設置 30 秒超時

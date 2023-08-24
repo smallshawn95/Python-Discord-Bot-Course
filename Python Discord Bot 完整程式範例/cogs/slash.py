@@ -3,9 +3,11 @@ from typing import Optional
 from discord import app_commands
 from discord.ext import commands
 from discord.app_commands import Choice
-from core.classes import Cog_Extension
 
-class Slash(Cog_Extension):
+class Slash(commands.Cog):
+    def __init__(self, bot: commands.Bot):
+        self.bot = bot
+
     # name指令名稱，description指令敘述
     @app_commands.command(name = "hello", description = "Hello, world!")
     async def hello(self, interaction: discord.Interaction):
