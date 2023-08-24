@@ -1,25 +1,10 @@
-import discord
-import datetime
+import discord, datetime
 from discord.ext import commands
 from discord import app_commands
-from core.classes import Cog_Extension
 
-class Embed(Cog_Extension):
-    @app_commands.command(name = "embed", description = "完整 Embed")
-    async def embed(self, interaction: discord.Interaction):
-        embed = discord.Embed(
-            title = "Discord Embed Teach",
-            description = "這是一篇 Discord Embed 的教學文章",
-            url = "https://hackmd.io/@smallshawn95/python_discord_bot_embed",
-            color = discord.Color.blue(),
-            timestamp = datetime.datetime.now()
-        )
-        embed.set_thumbnail(url = "https://i.imgur.com/BaBXr6b.png")
-        embed.set_author(name = interaction.user.name, url = interaction.user.avatar, icon_url = interaction.user.avatar)
-        embed.set_image(url = "https://i.imgur.com/fEowWaF.png")
-        embed.set_footer(text = interaction.user.name, icon_url = interaction.user.avatar)
-        embed.add_field(name = "😶 SmallShawn95", value = "https://smallshawn95.github.io/", inline = False)
-        await interaction.response.send_message(embed = embed)
+class Embed(commands.Cog):
+    def __init__(self, bot: commands.Bot):
+        self.bot = bot
 
     @app_commands.command(name = "embed_base", description = "初始 Embed")
     async def embed_base(self, interaction: discord.Interaction):
@@ -72,26 +57,15 @@ class Embed(Cog_Extension):
         embed.set_footer(text = interaction.user.name, icon_url = interaction.user.avatar)
         await interaction.response.send_message(embed = embed)
 
-    @app_commands.command(name = "embed_field_yes", description = "同行欄位 Embed")
-    async def embed_field_yes(self, interaction: discord.Interaction):
+    @app_commands.command(name = "embed_field", description = "欄位 Embed")
+    async def embed_field(self, interaction: discord.Interaction):
         embed = discord.Embed(
             title = "Discord Embed Teach",
             description = "這是一篇 Discord Embed 的教學文章",
             color = discord.Color.blue()
         )
-        embed.add_field(name = "Discord Embed", value = "Discord Embed", inline = True)
-        embed.add_field(name = "😶 SmallShawn95", value = "https://smallshawn95.github.io/", inline = True)
-        await interaction.response.send_message(embed = embed)
-
-    @app_commands.command(name = "embed_field_no", description = "不同行欄位 Embed")
-    async def embed_field_no(self, interaction: discord.Interaction):
-        embed = discord.Embed(
-            title = "Discord Embed Teach",
-            description = "這是一篇 Discord Embed 的教學文章",
-            color = discord.Color.blue()
-        )
-        embed.add_field(name = "Discord Embed", value = "Discord Embed", inline = False)
-        embed.add_field(name = "😶 SmallShawn95", value = "https://smallshawn95.github.io/", inline = False)
+        embed.add_field(name = "Discord Embed", value = "")
+        embed.add_field(name = "Discord Embed", value = "")
         await interaction.response.send_message(embed = embed)
 
 async def setup(bot: commands.Bot):
