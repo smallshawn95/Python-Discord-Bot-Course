@@ -1,7 +1,6 @@
 import discord
 from discord.ext import commands
 from discord import app_commands
-from core.classes import Cog_Extension
 
 # 創建按鈕交互函式
 async def button_callback(interaction: discord.Interaction):
@@ -19,7 +18,10 @@ class ButtonView(discord.ui.View):
     async def button_decorator(self, interaction: discord.Interaction, button: discord.ui.Button):
         await interaction.response.edit_message(content = "Hello, world!")
 
-class Button(Cog_Extension):
+class Button(commands.Cog):
+    def __init__(self, bot: commands.Bot):
+        self.bot = bot
+
     # 回呼函式(Callback)
     @app_commands.command(name = "button_interaction_callback", description = "Button 回呼函式交互")
     async def button_interaction_callback(self, interaction: discord.Interaction):
