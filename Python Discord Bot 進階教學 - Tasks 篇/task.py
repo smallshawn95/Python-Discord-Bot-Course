@@ -1,11 +1,10 @@
 import time, discord, datetime
 # 導入discord.ext模組中的tasks工具
 from discord.ext import tasks, commands
-from core.classes import Cog_Extension
 
-class TaskBase(Cog_Extension):
-    def __init__(self, bot):
-        super().__init__(bot)
+class TaskBase(commands.Cog):
+    def __init__(self, bot: commands.Bot):
+        self.bot = bot
         # 開始執行函式
         self.hi.start()
         self.start_time = time.time()
@@ -20,9 +19,9 @@ class TaskBase(Cog_Extension):
         execution_time = int(time.time() - self.start_time)
         print(f"{execution_time}sec: Hello, world!")
 
-class TaskAction(Cog_Extension):
-    def __init__(self, bot):
-        super().__init__(bot)
+class TaskAction(commands.Cog):
+    def __init__(self, bot: commands.Bot):
+        self.bot = bot
         self.action.start()
 
     @tasks.loop(seconds = 1)
@@ -42,9 +41,9 @@ class TaskAction(Cog_Extension):
     async def action_after(self):
         print("Stop")
 
-class TaskCount(Cog_Extension):
-    def __init__(self, bot):
-        super().__init__(bot)
+class TaskCount(commands.Cog):
+    def __init__(self, bot: commands.Bot):
+        self.bot = bot
         self.count.start()
         self.start_time = time.time()
 
@@ -60,14 +59,14 @@ class TaskCount(Cog_Extension):
         execution_time = int(time.time() - self.start_time)
         print(f"{execution_time}sec: Count end")
 
-class TaskTime(Cog_Extension):
+class TaskTime(commands.Cog):
     # 臺灣時區 UTC+8
     tz = datetime.timezone(datetime.timedelta(hours = 8))
     # 設定每日十二點執行一次函式
     everyday_time = datetime.time(hour = 0, minute = 0, tzinfo = tz)
 
-    def __init__(self, bot):
-        super().__init__(bot)
+    def __init__(self, bot: commands.Bot):
+        self.bot = bot
         self.everyday.start()
 
     # 每日十二點發送 "晚安!瑪卡巴卡!" 訊息
@@ -83,15 +82,15 @@ class TaskTime(Cog_Extension):
         )
         await channel.send(embed = embed)
 
-class TaskTimes(Cog_Extension):
+class TaskTimes(commands.Cog):
     # 設定整點執行一次函式
     every_hour_time = [
         datetime.time(hour = i, minute = 0, tzinfo = datetime.timezone(datetime.timedelta(hours = 8)))
         for i in range(24)
     ]
 
-    def __init__(self, bot):
-        super().__init__(bot)
+    def __init__(self, bot: commands.Bot):
+        self.bot = bot
         self.every_hour.start()
 
     # 每小時發送報時訊息
