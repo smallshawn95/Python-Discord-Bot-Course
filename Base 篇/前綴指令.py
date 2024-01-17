@@ -15,8 +15,8 @@ async def on_ready():
 
 @bot.command()
 # 輸入%Hello呼叫指令
-async def Hello(ctx):
+async def Hello(ctx: commands.Context):
     # 回覆Hello, world!
     await ctx.send("Hello, world!")
 
-bot.run("機器人的TOKEN")
+bot.run("BOT TOKEN")

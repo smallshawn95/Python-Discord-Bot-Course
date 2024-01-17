@@ -14,7 +14,7 @@ async def on_ready():
 
 @client.event
 # 當頻道有新訊息
-async def on_message(message):
+async def on_message(message: discord.Message):
     # 排除機器人本身的訊息，避免無限循環
     if message.author == client.user:
         return
@@ -22,4 +22,4 @@ async def on_message(message):
     if message.content == "Hello":
         await message.channel.send("Hello, world!")
 
-client.run("機器人的TOKEN")
+client.run("BOT TOKEN")
