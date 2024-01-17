@@ -2,6 +2,18 @@ import time, discord, datetime
 # 導入discord.ext模組中的tasks工具
 from discord.ext import tasks, commands
 
+intents = discord.Intents.all()
+bot = commands.Bot(command_prefix = "$", intents = intents)
+
+@bot.event
+async def on_ready():
+    await bot.add_cog(TaskBase(bot))
+    await bot.add_cog(TaskAction(bot))
+    await bot.add_cog(TaskCount(bot))
+    await bot.add_cog(TaskTime(bot))
+    await bot.add_cog(TaskTimes(bot))
+    print(f"目前登入身份 --> {bot.user}")
+
 class TaskBase(commands.Cog):
     def __init__(self, bot: commands.Bot):
         self.bot = bot
@@ -105,9 +117,4 @@ class TaskTimes(commands.Cog):
         )
         await channel.send(embed = embed)
 
-async def setup(bot: commands.Bot):
-    await bot.add_cog(TaskBase(bot))
-    await bot.add_cog(TaskAction(bot))
-    await bot.add_cog(TaskCount(bot))
-    await bot.add_cog(TaskTime(bot))
-    await bot.add_cog(TaskTimes(bot))
+bot.run("BOT TOKEN")
