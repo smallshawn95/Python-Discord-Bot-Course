@@ -1,4 +1,4 @@
-# Python Discord Bot Teach
+# Python Discord Bot Course
 這是 SmallShawn95 的 Python Discord Bot 教學系列，所有教學文章中的程式碼範例都在這。
 
 ## 教學文章目錄
