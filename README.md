@@ -9,6 +9,7 @@
 * [Python Discord Bot 進階教學 - Embed 篇](https://hackmd.io/@smallshawn95/python_discord_bot_embed)
 * [Python Discord Bot 進階教學 - View 篇](https://hackmd.io/@smallshawn95/python_discord_bot_view)
 * [Python Discord Bot 進階教學 - Button 篇](https://hackmd.io/@smallshawn95/python_discord_bot_button)
+* [Python Discord Bot 進階教學 - Modal 篇](https://hackmd.io/@smallshawn95/python_discord_bot_modal)
 * [Python Discord Bot 進階教學 - Event 篇](https://hackmd.io/@smallshawn95/python_discord_bot_event)
 
 ## 程式碼範例目錄
@@ -19,6 +20,7 @@
 * [Python Discord Bot 進階教學 - Embed 篇](Embed%20%E7%AF%87)
 * [Python Discord Bot 進階教學 - View 篇](View%20%E7%AF%87)
 * [Python Discord Bot 進階教學 - Button 篇](Button%20%E7%AF%87)
+* [Python Discord Bot 進階教學 - Modal 篇](Modal%20%E7%AF%87)
 * [Python Discord Bot 進階教學 - Event 篇](Event%20%E7%AF%87)
 * [Python Discord Bot 完整程式範例](%E5%AE%8C%E6%95%B4%E7%A8%8B%E5%BC%8F%E7%AF%84%E4%BE%8B)
 
