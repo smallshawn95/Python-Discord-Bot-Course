@@ -35,12 +35,12 @@ class ModalExample(discord.ui.Modal, title = "Modal 完整範例"):
         await interaction.response.send_message(f"{self.one}, {self.two}, {self.three}, {self.four}, {self.five}")
 
 @bot.tree.command(name = "modal_base", description = "Modal 基本範例")
-async def modal_base(self, interaction: discord.Interaction):
+async def modal_base(interaction: discord.Interaction):
     # 回覆 Modal 給使用者
     await interaction.response.send_modal(ModalClass())
 
 @bot.tree.command(name = "modal_example", description = "Modal 完整範例")
-async def modal_example(self, interaction: discord.Interaction):
+async def modal_example(interaction: discord.Interaction):
     await interaction.response.send_modal(ModalExample())
 
 bot.run("BOT TOKEN")
