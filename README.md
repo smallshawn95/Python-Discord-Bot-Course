@@ -31,3 +31,13 @@ GitHub 本身僅支持下載整個儲存庫或者單一檔案，如果要下載�
 連結：https://minhaskamal.github.io/DownGit/#/home
 
 ![DownGit](https://github.com/smallshawn95/Python-Discord-Bot-Teach/assets/120244412/5229fb70-8990-4114-bed3-f71e9e7fdb33)
+
+## ⭐ Star History
+
+<a href="https://www.star-history.com/?repos=smallshawn95%2Fpython-discord-bot-course&type=date&legend=top-left">
+ <picture>
+   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/chart?repos=smallshawn95/python-discord-bot-course&type=date&theme=dark&legend=top-left" />
+   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/chart?repos=smallshawn95/python-discord-bot-course&type=date&legend=top-left" />
+   <img alt="Star History Chart" src="https://api.star-history.com/chart?repos=smallshawn95/python-discord-bot-course&type=date&legend=top-left" />
+ </picture>
+</a>
